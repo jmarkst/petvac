@@ -6,6 +6,7 @@ import pickle
 import sklearn
 import pandas as pd
 
+MODEL_NAME = 'llama3.2:3b-instruct-q6_K'
 app = Flask(__name__)
 rf = "rfmodel.pickle"
 products = pd.read_csv("products.csv")
@@ -48,7 +49,7 @@ def generate_response(input_text):
         'content': input_text
         }
         ],
-        model='llama3.2:3b-instruct-q6_K',
+        model=MODEL_NAME,
         format=PetList.model_json_schema(),
     )
     print(response)
