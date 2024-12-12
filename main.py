@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS, cross_origin
 from ollama import chat, create
 from pydantic import BaseModel
 from typing import Literal
@@ -8,6 +9,7 @@ import pandas as pd
 
 MODEL_NAME = 'llama3.2:3b-instruct-q6_K'
 app = Flask(__name__)
+cors = CORS(app)
 rf = "rfmodel.pickle"
 products = pd.read_csv("products.csv")
 unique = products['product_name'].unique()
