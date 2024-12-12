@@ -2,7 +2,7 @@ Backend for PetVac. Written in Python using Flask.
 
 Please install these libraries first through `pip`:
 ```
-pip install flask pandas scikit-learn ollama pydantic
+pip install flask pandas scikit-learn ollama pydantic flask_cors
 ```
 
 Add `pickle` to pip if needed.
